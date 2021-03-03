@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/menuButtonIcon.png</file>
+        <file>img/excelButtonIcon.png</file>
+        <file>img/settingsButtonIcon.png</file>
+        <file>img/settingsButton4Icon.png</file>
+        <file>img/TRX.jpg</file>
+        <file>img/menuDecoderFaultslessActiveIcon.png</file>
+        <file>img/menuDecoderFaultslessDisabledIcon.png</file>
+        <file>img/trxReload2ButtonIcon.png</file>
+        <file>img/trxReloadButtonIcon.png</file>
+        <file>img/checkButtonIcon.png</file>
+        <file>img/decoderDisabled.png</file>
+        <file>img/decoderEnabled.png</file>
+        <file>img/permanentButton.png</file>
+        <file>img/excelButtonIcon3.png</file>
+        <file>img/TRX.ico</file>
+    </qresource>
+</RCC>
