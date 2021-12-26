@@ -70,13 +70,11 @@ MainWindow::~MainWindow()
     test2.terminate();
     test1.wait();
     test2.wait();
-    //if(searchLine)
-    delete searchLine;//->deleteLater();
+    delete searchLine; //->deleteLater();
 }
 
 void MainWindow::copyToBuffer(int mode)
 {
-    qDebug() << "called";
     if(ui->tableView->selectionModel()->selection().size()){
         QClipboard *clip = QApplication::clipboard();
         clip->clear();
@@ -86,17 +84,12 @@ void MainWindow::copyToBuffer(int mode)
             if(!rows.contains(currentRow.row()))
                     rows.append(currentRow.row());
         for(auto currentRow :rows ){
-            //text.append(currentRow.data().toStringList().join('\t') + '\n');
             if(mode == 3)
                 text.append(ui->tableView->model()->index(currentRow, 1).data().toString() + '\n');
             if(mode != 2)
                 text.append(ui->tableView->model()->index(currentRow, 0).data().toString() + '\n');
             if(mode != 1)
                 text.append(ui->tableView->model()->index(currentRow, 2).data().toString() + '\n');
-        }
-        //QString text = ui->tableView->model()->index(row, 2).data().toString();
-        if(!text.size()){
-            //text = ui->tableView->model()->index(row, 0).data().toString();
         }
         clip->setText(text);
     }
@@ -170,17 +163,6 @@ void MainWindow::slotShortcutCtrlF()
         ui->tableView->setStyleSheet("QTableView {  background-color: white; }");
     }
 }
-/*
-void MainWindow::on_pushButton_2_clicked()
-{
-    qDebug() << model.existCodes();
-    qDebug() << bsc3.telnet.buffer.__buffer;
-    //checkFaultsOnTG(faults.getAllTransferingGroupNoReasonNum());
-    /
-    for(auto tg: faults.getAllTransferingGroupNum()){
-        model.addFaultToRow(tg, bsc3.getFaultsFromCF(tg));
-    }/
-}*/
 
 void MainWindow::checkFaultsOnTG(QStringList transferingGroups)
 {
@@ -197,7 +179,8 @@ void MainWindow::moveButton(int x, int y)
     label_2->setGeometry(x - 70, y, label->size().width(), label->size().height());
     label_3->setGeometry(x - 140, y, label->size().width(), label->size().height());
     label_4->setGeometry(x - 210, y, label->size().width(), label->size().height());
-    searchLine->setGeometry(this->size().width() - searchLine->size().width() - 70, 20, searchLine->size().width(), searchLine->size().height());
+    searchLine->setGeometry(this->size().width() - searchLine->size().width() - 70, 20, 
+                            searchLine->size().width(), searchLine->size().height());
     this->updateGeometry();
 }
 
