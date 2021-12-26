@@ -30,7 +30,7 @@ QString TelnetCommandsHandler::getCF(QString cfString) // осторожно, к
     if(splittedString.size() > 1){
         if(QString::number(splittedString[1].toInt()) == "0")
             return splittedString[1].split(',')[0].split('-')[0];
-        return QString::number(splittedString[1].toInt()); // no to int()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        return QString::number(splittedString[1].toInt());
     }
     if(QString::number(cfString.toInt()) == "0")
         return cfString.split(',')[0].split('-')[0];
