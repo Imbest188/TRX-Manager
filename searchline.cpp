@@ -21,22 +21,19 @@ void SearchLine::closeWindow()
 {
     this->setHidden(true);
 }
-#include <QDebug>
+
 void SearchLine::onEnterPressed()
 {
     qDebug() << "call enter on line";
     if(this->isVisible()){
         searchIndex++;
         checkLine();
-        qDebug() << '+';
     }
 }
 
 void SearchLine::checkLine()
 {
-    qDebug() << '=';
     if(this->text().size()){
-        qDebug() << "emit";
         emit enterPressed(this->text(), searchIndex);
     }
 }
